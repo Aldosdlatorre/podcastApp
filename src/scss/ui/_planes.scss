@@ -1,0 +1,85 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+.planes{
+    background-color: v.$secundario;
+
+    h2,
+    .descripcion{
+        color: v.$blanco;
+    }
+}
+
+.nuestros-planes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mix.tablet {
+        flex-direction: row;
+        max-width: 80rem;
+        margin: 10rem auto 0;
+    }
+    .plan{
+        @include mix.tablet {
+            transition: 300ms ease-in-out;
+            &:hover{
+                transform: scale(1.1);
+                border: none;
+        }
+        }
+        background-color: v.$blanco;
+        flex: 1;
+        padding: 16rem 2rem 4rem 2rem;
+        text-align: center;
+        border-bottom: 1px solid #e1e1e1;
+        &.inicio,
+        &.negocio,
+        &.pro{
+            background-repeat: no-repeat;
+            background-position: 50% 2rem;
+            background-size: 10rem;
+        }
+
+        &.inicio{
+            background-image: url("../img/icono_inicio.svg");
+        }
+
+        &.negocio{
+            background-image: url("../img/icono_negocio.svg");
+            background-color: v.$primario;
+            @include mix.tablet {
+                padding-top: 21rem;
+                margin-top: -4rem;
+                margin-bottom: -4rem;
+                border-radius: 2rem;
+                z-index: 1;
+                background-position: 50% 7rem;
+            }
+        }
+
+        &.pro{
+            background-image: url("../img/icono_pro.svg");
+        }
+
+        &.negocio{
+            order: -1;
+            @include mix.tablet {
+                order: unset;
+            }
+        }
+    }
+
+    .precio{
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .listado{
+        li{
+            margin-bottom: 2rem;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

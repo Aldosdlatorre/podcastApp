@@ -1,0 +1,17 @@
+@use 'variables' as v; 
+@use 'mixins' as mix;
+
+.text-center {
+    text-align: center;
+}
+
+.bg-primario {
+    background-color: v.$primario;
+}
+
+.seccion{
+    padding: 5rem 0;
+    @include mix.tablet {
+        padding: 8rem 0;
+    }
+}

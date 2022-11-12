@@ -1,0 +1,34 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+.site-header{
+    background-image:linear-gradient(v.$secundarioOpacity 0%, v.$secundarioOpacity 100%) ,url("../img/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem 0;
+    background-position: top center;
+
+    .logo{
+        max-width: 20rem;
+        margin: 0 auto;
+        @include mix.tablet {
+            margin: 0;
+        }
+    }
+
+    .contenido-header{
+        margin-top: 10rem;
+        @include mix.desktop {
+            margin-top: 15rem;
+        }
+
+        h1{
+            color: v.$blanco;
+            font-size: 3rem;
+            @include mix.desktop {
+                font-size: 6rem;
+                max-width: 50%;
+            }
+        }
+    }
+}

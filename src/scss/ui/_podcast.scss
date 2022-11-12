@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+.crea-grid{
+    
+    @include mix.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .contenido-podcast{
+        text-align: center;
+        @include mix.tablet {
+            text-align: left;
+        }
+    }
+
+    h2{
+        margin: 4rem 0;
+        @include mix.tablet {
+            margin: 1rem 0;
+        }
+    }
+}
